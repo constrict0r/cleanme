@@ -1,0 +1,19 @@
+---
+stages:
+  - test
+
+buster:
+  image: debian:stable-slim
+  stage: test
+  before_script:
+    - chmod +x testme.sh
+  script:
+    - ./testme.sh -i -k
+
+stretch:
+  image: debian:stretch-slim
+  stage: test
+  before_script:
+    - chmod +x testme.sh
+  script:
+    - ./testme.sh -i -k

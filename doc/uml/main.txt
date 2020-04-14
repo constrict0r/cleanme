@@ -1,0 +1,28 @@
+@startuml
+'Use plantuml to view this file as an image: http://plantuml.com'
+
+skinparam monochrome reverse
+
+start
+
+if (Cleanup Ansible?) then (yes)
+  :Remove installed roles;
+  if (uninstall == true?) then (yes)
+    :Uninstall ansible;
+  else (no)
+  endif
+else (no)
+endif
+
+if (Cleanup Python?) then (yes)
+  :Remove python cache files;
+  :Remove coverage report;
+else (no)
+endif
+
+:Remove soft links on tests folder;
+:Remove all files on /tmp;
+
+end
+
+@enduml

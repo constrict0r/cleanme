@@ -17,4 +17,4 @@ before_script:
   - chmod +x testme.sh
 
 script:
-  - sudo /bin/bash -H -c './testme.sh -i -k'
+  - sudo bash -H -c './testme.sh -i -k'
